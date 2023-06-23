@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+// import React,{useEffect,createContext,useReducer,useContext} from 'react';
+import {BrowserRouter,Route,Routes} from 'react-router-dom'
+import Home from './components/home';
 import './App.css';
+// export const UserContext = createContext();
+
+
+const Routing = ()=>{
+  // const Navigate = useNavigate();
+  console.log('h');
+  return(
+    <Routes>
+      <Route exact path="/home" >
+        <Home />
+      </Route>
+    </Routes>
+  )
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return(
+    <BrowserRouter>
+      <Routing />
+    </BrowserRouter>
   );
 }
 
